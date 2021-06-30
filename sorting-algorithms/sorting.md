@@ -28,3 +28,17 @@
 - Keeping one side of the array sorted, and adding one item in one at a time, can be good for continuous singular data coming in and needing to find the correct place for it
 - Big O time: O(n^2)
 - Big O space: O(1)
+
+![Big O](images/BigO_ElemSort.png)
+
+## Intermediate Sorting Algorithms
+
+### Merge Sort
+
+- Works by decomposing an array into smaller arrays of 0 or 1 elements, then building back up a newly sorted array
+- Works best with a helper function which merges two sorted arrays
+- Recursively, we break down the array into smaller 1 element arrays, and then call the merge helper function to merge the two smaller arrays back together
+- Big O time: O(n log(n))
+- Big 0 space: O(n)
+
+![Merge Sort](images/MergeSort.png)
