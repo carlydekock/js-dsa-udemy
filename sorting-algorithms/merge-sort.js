@@ -37,11 +37,27 @@ function mergeArrays(arr1, arr2){
   return results;
 }
 
-console.log(mergeArrays([1,4,7], [2,3,6,7,8,9]));
+// console.log(mergeArrays([1,4,7], [2,3,6,7,8,9]));
 
+//MergeSort Pseudocode
+//Break up the array into halves until you have arrays that are empty or have one element
+//Tip: Use arr.slice, 0 to mid, then mid to end, then break each half into own half
+//Tip: base case is when length is <= 1
+//Once you have smaller sorted arrays, merge those arrays with other sorted arrays until you are back at the full length of the array
+//Once the array has been merged back together, return the merged (and sorted) array
 
+function mergeSort(arr){
+  if(arr.length <= 1){
+    return arr;
+  }
+  let mid = Math.floor(arr.length/2);
+  let left = mergeSort(arr.slice(0, mid));
+  let right= mergeSort(arr.slice(mid));
 
+  return mergeArrays(left, right);
+}
 
+console.log(mergeSort([4,3,1,6,8,5]))
 
 
 //Alternative to top helper function, simplified a bit in the if/else logic to clean up multiple cases above
