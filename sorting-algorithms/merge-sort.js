@@ -38,3 +38,33 @@ function mergeArrays(arr1, arr2){
 }
 
 console.log(mergeArrays([1,4,7], [2,3,6,7,8,9]));
+
+
+
+
+
+
+//Alternative to top helper function, simplified a bit in the if/else logic to clean up multiple cases above
+// function mergeArrays(arr1, arr2){
+//   let i = 0;
+//   let j = 0;
+//   let results = [];
+//   while (i < arr1.length && j < arr2.length){
+//     if(arr1[i] < arr2[j]){
+//       results.push(arr1[i]);
+//       i++;
+//     } else {
+//        results.push(arr2[j]);
+//        j++;
+//     }
+//   }
+//   while(i < arr1.length){
+//     results.push(arr1[i]);
+//     i++;
+//   }
+//   while(j < arr2.length){
+//     results.push(arr2[j]);
+//     j++;
+//   }
+//   return results;
+// }
