@@ -42,3 +42,11 @@
 - Big 0 space: O(n)
 
 ![Merge Sort](images/MergeSort.png)
+
+### Quick Sort
+
+- Helps to have a helper function which designate an element as the pivot. It then rearranges elements in the array so that all values less than the pivot are moved to the left of the pivot, and all values greater than the pivot are moved to the right of the pivot (order of elements on either side of the pivot doesn't matter).
+- The helper should do this in place, not create a new array. When complete, it shoud return the index of the pivot.
+- Picking a pivot: ideally the pivot should be chosen to that it is the median value of our dataset that you're sorting
+- Big O time: O(n log(n0))
+- Big O space: O(log n)
