@@ -42,6 +42,7 @@
 - Big 0 space: O(n)
 
 ![Merge Sort](images/MergeSort.png)
+![Merge Sort Big O](images/MergeSort_BigO.png)
 
 ### Quick Sort
 
@@ -50,3 +51,17 @@
 - Picking a pivot: ideally the pivot should be chosen to that it is the median value of our dataset that you're sorting
 - Big O time: O(n log(n0))
 - Big O space: O(log n)
+
+![Quick Sort Big O](images/QuickSort_BigO.png)
+
+### Radix Sort
+
+- Different way of sorting than the other sorting methods above, don't comparing to another, but moving into buckets and re-grouping as a means of sorting
+- Number of iterations depends on the number of digits in the largest number in the array
+- Helps to have a few helper functions: get the digit in the number at the specified place value, how many digits are in a number, and the largest number of digits in a number in a list of numbers
+- Big O time: O(nk) where n=length of array, k=avg number of digits
+- Big O space: O(n + k)
+- Put into buckets of 0 - 9 first for the ones place, then for the tens, then hundreds, etc. Each iteration, put the array back together according to how they numbers were separated into buckets. First iteration for group of numbers pictured below (sort according to digit in the ones place)
+
+![Radix Sort](images/RadixSort.png)
+![Radix Sort Big O](images/RadixSort_BigO.png)
