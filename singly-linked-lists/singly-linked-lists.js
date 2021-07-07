@@ -32,10 +32,43 @@ class SinglyLinkedList {
     this.length++;
     return this;
   }
+
+  //Pop method: remove a node from the end of the linked list
+  //Note: To remove the node, have to assign a new tail - don't have a backwards pointer, so can't return the "one before this"
+  //Define function called pop - check if nothing in the list, return undefined
+  //Otherwise, loop through the entire list until you reach the tail, but also have variable that keeps track of previous item
+  //Set the next property of the 2nd to last node to be null
+  //Set the tail to be the 2nd to last node
+  //Decrement the length of the list by 1
+  //Return the value of the node removed
+
+  pop(){
+    if(!this.head){
+      return undefined;
+    }
+    let current = this.head;
+    let newTail = current;
+    while(current.next){
+      newTail = current;
+      current = current.next;
+    }
+    this.tail = newTail;
+    this.tail.next = null;
+    this.length--;
+    if(this.length === 0){
+      this.head = null;
+      this.tail = null;
+    }
+    return current;
+  }
+
 }
 
 let list = new SinglyLinkedList();
-list.push('hello');
-list.push('goodbye');
+list.push(5);
 list.push(10);
+list.push(15);
+console.log(list);
+
+console.log(list.pop());
 console.log(list);
