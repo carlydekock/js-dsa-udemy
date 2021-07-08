@@ -166,6 +166,34 @@ class SinglyLinkedList {
     this.length++;
     return true;
   }
+
+  //Remove: removing a node from the linked list at a specific position
+  //Define a function that accepts an index
+  //If the index is less than 0 or greater than or equal to the length, return undefined
+  //If the index is the same as the length-1, use pop
+  //If the index is equal to 0, use shift
+  //Otherwise, use get method, access the node at the index-1
+  //Set the next property on that node to be the next of the next node
+  //Decrement the length
+  //Return the value of the node removed
+
+  remove(index){
+    if(index < 0 || index >= this.length){
+      return undefined;
+    }
+    if(index === this.length - 1){
+      return this.pop();
+    }
+    if(index === 0){
+      return this.shift();
+    }
+
+    let previous = this.get(index-1);
+    let removed = previous.next;
+    previous.next = removed.next;
+    this.length--;
+    return removed;
+  }
 }
 
 let list = new SinglyLinkedList();
@@ -173,4 +201,5 @@ list.push(5);
 list.push(10);
 list.push(15);
 list.push(25);
-// console.log(list.insert(3, 20));
+console.log(list.remove(0));
+console.log(list);
