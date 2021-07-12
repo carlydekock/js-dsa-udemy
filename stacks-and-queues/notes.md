@@ -28,6 +28,8 @@
 - Abstract data structure or concept, collection of data that needs to abide by FIFO principle (first in first out)
 - Where are stacks used: games, background tasks, uploading/downloading resources, printing/task processing
 - Can be implemented with an array, or with our own queue class
+- Useful for processing tasks that positioning needs to be recorded/ordered
+- Foundational for more complex data structures
 
 ### Array Implementation - Queues
 
