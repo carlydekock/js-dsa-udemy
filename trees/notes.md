@@ -27,6 +27,11 @@
 - BSTs are used to sort data that can be compared and is sortable
 - BSTs are very efficient for searching and inserting
 
+### Big O of BST
+
+- Insertion: O(log n)
+- Searching: O(log n)
+
 ## Binary Trees
 
 - Each node can have at most two children
