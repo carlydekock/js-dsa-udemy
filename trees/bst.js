@@ -119,6 +119,27 @@ class BST {
     return nodes;
   }
 
+
+  //Depth First Search (DFS) - preOrder (visit node first, then move on)
+  //Create a variable to store the values of nodes visisted
+  //Store the root of the BST in a variable called current
+  //Write a helper function which accepts a node
+    //Push the value of the node to the variable that stores the values
+    //If the node has a left property, call the helper function with the left property on the node
+    //If the node has a right property, call the helper function with the right property on the node
+  //Invoke the helper function with the current variable
+  //Return the values
+  DFSPreOrder(){
+    let nodes = [];
+    let current = this.root;
+    const traverse = (node) => {
+      nodes.push(node.value);
+      if(node.left) traverse(node.left);
+      if(node.right) traverse(node.right);
+    }
+    traverse(current);
+    return nodes;
+  }
 }
 
 let tree = new BST();
@@ -128,4 +149,4 @@ tree.insert(15);
 tree.insert(3);
 tree.insert(8);
 tree.insert(20);
-console.log(tree.BFS());
+console.log(tree.DFSPreOrder());
