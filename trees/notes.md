@@ -43,3 +43,6 @@
   - In-order: left -> root -> right
   - Pre-order: root -> left -> right
   - Post-order: left -> right -> root
+- Depending on the tree shape, both breadth and depth will take the same amount of time but could require much different amounts of memory storage
+- DFS In-order: will give all ndoes in the tree in their underlying (pictured) order
+- DFS Pre-order: could be useful to "export" a tree structure so that it could be reconstructed or copied

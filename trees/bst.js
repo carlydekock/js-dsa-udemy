@@ -140,6 +140,33 @@ class BST {
     traverse(current);
     return nodes;
   }
+
+  //PostOrder: visit node after left and right, explore all children before visit the node itself(left -> right -> root)
+  DFSPostOrder(){
+    let nodes = [];
+    let current = this.root;
+    const traverse = (node) => {
+      if(node.left) traverse(node.left);
+      if(node.right) traverse(node.right);
+      nodes.push(node.value);
+    }
+    traverse(current);
+    return nodes;
+  }
+
+  //InOrder: left side, then visit node, then go to the right
+  //left -> root -> right
+  DFSInOrder(){
+    let nodes = [];
+    let current = this.root;
+    const traverse = (node) => {
+      if(node.left) traverse(node.left);
+      nodes.push(node.value);
+      if(node.right) traverse(node.right);
+    }
+    traverse(current);
+    return nodes;
+  }
 }
 
 let tree = new BST();
@@ -150,3 +177,5 @@ tree.insert(3);
 tree.insert(8);
 tree.insert(20);
 console.log(tree.DFSPreOrder());
+console.log(tree.DFSPostOrder());
+console.log(tree.DFSInOrder());
