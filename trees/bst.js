@@ -96,15 +96,36 @@ class BST {
     }
     return false;
   }
+
+  //Breadth First Search (BFS)
+  //Create a queue (can be an array) using push/shift
+  //Place the root node in the queue
+  //Loop as long as there is anything in the queue
+    //Dequeue a node from the queue and push the value of the node into the variable that stores the nodes
+    //If there is a left property on the node dequeued - add it to the queue
+    //If there is a right property on the node dequeued - add it to the queue
+  //Return the variable that stores the values
+  BFS(){
+    let current = this.root;
+    let nodes = [];
+    let queue = [];
+    queue.push(this.root);
+    while(queue.length){
+      current = queue.shift();
+      nodes.push(current.value);
+      if(current.left) queue.push(current.left);
+      if(current.right) queue.push(current.right);
+    }
+    return nodes;
+  }
+
 }
 
-// let bst = new BST();
-// bst.insert(10);
-// bst.insert(5);
-// bst.insert(13);
-// bst.insert(11);
-// bst.insert(7);
-// console.log(bst.find(5));
-// console.log(bst.find(14));
-// console.log(bst.contains(13));
-// console.log(bst.contains(4));
+let tree = new BST();
+tree.insert(10);
+tree.insert(6);
+tree.insert(15);
+tree.insert(3);
+tree.insert(8);
+tree.insert(20);
+console.log(tree.BFS());
