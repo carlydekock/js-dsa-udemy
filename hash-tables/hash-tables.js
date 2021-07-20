@@ -51,13 +51,47 @@ class HashTable {
     }
     return undefined;
   }
+
+  //Keys: returns array of all keys in table
+  //Loops through the hash table array and returns an array of keys in the table
+  keys(){
+    let keysArray = [];
+    for(let i = 0; i < this.keyMap.length; i++){
+      if(this.keyMap[i]){
+        for(let j = 0; j < this.keyMap[i].length; j++){
+          if(!keysArray.includes(this.keyMap[i][j][0])){
+            keysArray.push(this.keyMap[i][j][0]);
+          }
+        }
+      }
+    }
+    return keysArray;
+  }
+
+  //Values: returns array of all values in the table
+  //Loops through the hash table array and returns an array of values in the table
+  values(){
+    let valuesArray = [];
+    for(let i = 0; i < this.keyMap.length; i++){
+      if(this.keyMap[i]){
+        for(let j = 0; j < this.keyMap[i].length; j++){
+          if(!valuesArray.includes(this.keyMap[i][j][1])){
+            valuesArray.push(this.keyMap[i][j][1]);
+          }
+        }
+      }
+    }
+    return valuesArray;
+  }
 }
 
-let ht = new HashTable(4);
-ht.set('hello world', 'goodbye!');
-ht.set('hi there', 'see you later');
-ht.set('aloha', 'mahalo');
-ht.set('hola', 'adios');
-console.log(ht);
-console.log(ht.get('aloha'));
-console.log(ht.get('hows it going'));
+// let ht = new HashTable(4);
+// ht.set('hello world', 'goodbye!');
+// ht.set('hi there', 'see you later');
+// ht.set('aloha', 'mahalo');
+// ht.set('hola', 'adios');
+// // console.log(ht);
+// // console.log(ht.get('aloha'));
+// // console.log(ht.get('hows it going'));
+// console.log(ht.keys());
+// console.log(ht.values());
