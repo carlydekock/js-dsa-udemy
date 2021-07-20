@@ -21,4 +21,12 @@
   - Fast, constant time
   - Doesn't cluster outputs at specific indices, but distributes uniformly
   - Deterministic (same input yields same output)
+- Hash functions almost always take advantage of prime numbers, prime number in the hash is helpful in spreading out the keys more uniformly
+
+## Dealing with Collisions
+
+- Collisions are inevitable
+- Two strategies we'll focus on: separate chaining and linear probing
+  - Separate chaining: store the pieces of data at the same spot using another nested data structure (array, linked list, etc)
+  - Linear probing: when find collision, search through the array to find the next empty slot (only store one piece of data stored at same index, won't store in nested structure)
   
