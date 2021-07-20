@@ -29,4 +29,9 @@
 - Two strategies we'll focus on: separate chaining and linear probing
   - Separate chaining: store the pieces of data at the same spot using another nested data structure (array, linked list, etc)
   - Linear probing: when find collision, search through the array to find the next empty slot (only store one piece of data stored at same index, won't store in nested structure)
-  
+
+## Big O of Hash Tables
+
+- Insert: O(1)
+- Deletion: O(1)
+- Access: O(1)
