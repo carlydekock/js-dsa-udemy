@@ -1,1 +1,3 @@
-# js-dsa-udemy
+# JavaScript Algorithms & Data Structures
+
+## Udemy Course, Instructor: Colt Steele
