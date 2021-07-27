@@ -46,4 +46,3 @@
 - Search: O(n)
 
 ![image](images/BinaryHeaps_BigO.png)
-
