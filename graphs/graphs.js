@@ -129,6 +129,37 @@ class Graph {
     return results;
   }
 
+  //Breadth First: prioritizes visiting neighbors of given depth before moving downwards or visiting neighbors of neighbors
+  //Function should accept a starting vertex
+  //Create a queue (use an array), place starting vertex in it
+  //Create an array to store nodes visited
+  //Create an object to store nodes visited
+  //Mark the starting vertex as visited
+  //Loop as long as there is anything in the queue
+  //Remove the first vertex from the queue and push it into the array that stores nodes visited
+  //Loop over each vertex in the adjacency list for the vertex you are visiting
+  //If it is not inside the object that stores nodes visited, mark it as visited and enqueue that vertex
+  //Once finished looping, return the array of visited nodes
+
+  breadthFirst(start){
+    const queue = [start];
+    const results = [];
+    const visited = {};
+    let currentVertex;
+
+    visited[start] = true;
+    while(queue.length){
+      currentVertex = queue.shift();
+      results.push(currentVertex);
+      this.adjacencyList[currentVertex].forEach(neighbor => {
+        if(!visited[neighbor]){
+          visited[neighbor] = true;
+          queue.push(neighbor);
+        }
+      });
+    }
+    return results;
+  }
 }
 
 let g = new Graph();
@@ -145,4 +176,4 @@ g.addEdge('C', 'E');
 g.addEdge('D', 'E');
 g.addEdge('D', 'F');
 g.addEdge('E', 'F');
-console.log(g.dfsIterative('A'));
+console.log(g.breadthFirst('A'));
