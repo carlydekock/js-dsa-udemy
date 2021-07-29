@@ -85,6 +85,50 @@ class Graph {
     dfs(start);
     return results;
   }
+
+  //Depth first traversal - iterative
+  //Let S be a stack
+  //Push the starting node
+  //While S is not empty
+    //Vertex = S.pop()
+    //If vertex is not labeled as discovered:
+      //Visit vertex (add to result list)
+      //Label vertex as discovered
+      //For each of vertex's neighbors, N do S.push(N)
+
+  //The function should accept a starting node
+  //Create a stack to help keep track of vertices (use a list/array)
+  //Create a list to store the end result, to be returned at the very end
+  //Create an object to store visited vertices
+  //Add the starting vertex to the stack, and mark it visited
+  //While the stack has something in it:
+    //Pop the next vertex from the stack
+    //If that vertex hasnt been visited yet
+      //Mark it as visited
+      //Add it to the result list
+      //Push all of its neighbors into the stack
+  //Return the result array
+  
+  dfsIterative(start){
+    const stack = [start];
+    const results = [];
+    const visited = {};
+    let currentVertex;
+
+    visited[start] = true;
+    while(stack.length){
+      currentVertex = stack.pop();
+      results.push(currentVertex);
+      this.adjacencyList[currentVertex].forEach(neighbor => {
+        if(!visited[neighbor]){
+          visited[neighbor] = true;
+          stack.push(neighbor);
+        }
+      })
+    }
+    return results;
+  }
+
 }
 
 let g = new Graph();
@@ -101,4 +145,4 @@ g.addEdge('C', 'E');
 g.addEdge('D', 'E');
 g.addEdge('D', 'F');
 g.addEdge('E', 'F');
-console.log(g.dfsRecursive('A'));
+console.log(g.dfsIterative('A'));
