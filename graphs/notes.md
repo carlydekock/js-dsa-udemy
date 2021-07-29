@@ -40,3 +40,15 @@
 - We'll use an adjacency list, because most data in the real world tends to lend itself to sparser and/or larger graphs
 
 ![image](images/BigO.png)
+
+## Dijkstra's Algorithm
+
+- Find the shortest path between two vertices on a graph, answers the question of the fastest way to get from point A to point B
+- Shortened from Dijkstra's shortest path algorithm, one of the most famous algorithms out there
+
+### Example Use Cases
+
+- GPS: finding fastest route
+- Network routing: finds open shortes path for data
+- Biology: used to model the spread of viruses among humans
+- Airline tickets: finding cheapest route to your destination
