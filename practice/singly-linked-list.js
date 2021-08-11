@@ -28,8 +28,34 @@ class SinglyLinkedList {
     this.length++;
     return this;
   }
+
+  //SLL - pop
+  //Function should remove a node at the end of the SLL. It should return the node removed
+  pop(){
+    if(!this.head){
+      return undefined;
+    }
+    let current = this.head;
+    let newTail = current;
+    while(current.next){
+      newTail = current;
+      current = current.next;
+    }
+    this.tail = newTail;
+    newTail.next = null;
+    this.length--;
+    if(this.length === 0){
+      this.head = null;
+      this.tail = null;
+    }
+    return current;
+  }
 }
 
-// let list = new SinglyLinkedList();
-// console.log(list.push(5));
-// console.log(list.push(10));
+let list = new SinglyLinkedList();
+list.push(5);
+list.push(10);
+list.push(15);
+console.log(list.push(20));
+console.log(list.pop());
+console.log(list);
