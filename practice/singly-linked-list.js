@@ -65,6 +65,37 @@ class SinglyLinkedList {
     }
     return current;
   }
+
+  //SLL - insert
+  //Function should insert a node at the specified index in a SLL. It should return true if the index is valid, and false if the index is invalid (less than 0 or greater than the length of the list).
+  insert(index, value){
+    if(index < 0 || index > this.length){
+      return false;
+    }
+    if(index === this.length){
+      return !!this.push(value);
+    }
+    if(index === 0){
+      let newNode = new Node(value);
+      if(!this.head){
+        this.head = newNode;
+        this.tail = this.head;
+      } else {
+        newNode.next = this.head;
+        this.head = newNode;
+      }
+      this.length++;
+      return true;
+    }
+
+    let newNode = new Node(value);
+    let previous = this.get(index-1);
+    let temp = previous.next;
+    previous.next = newNode;
+    newNode.next = temp;
+    this.length++;
+    return true;
+  }
 }
 
 let list = new SinglyLinkedList();
@@ -74,4 +105,8 @@ list.push(15);
 console.log(list.push(20));
 // console.log(list.pop());
 // console.log(list);
-console.log(list.get(1));
+// console.log(list.get(1));
+console.log(list.insert(6, 1));
+// console.log(list);
+// console.log(list.insert(3, 2));
+// console.log(list.head.next.next.next);
