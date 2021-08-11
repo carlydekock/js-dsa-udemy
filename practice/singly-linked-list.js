@@ -50,6 +50,21 @@ class SinglyLinkedList {
     }
     return current;
   }
+
+  //SLL - get
+  //Function should find a node at a specified index in a SLL. It should return the found node
+  get(index){
+    if(!this.head || index >= this.length){
+      return null;
+    }
+    let counter = 0;
+    let current = this.head;
+    while(counter !== index){
+      current = current.next;
+      counter++;
+    }
+    return current;
+  }
 }
 
 let list = new SinglyLinkedList();
@@ -57,5 +72,6 @@ list.push(5);
 list.push(10);
 list.push(15);
 console.log(list.push(20));
-console.log(list.pop());
-console.log(list);
+// console.log(list.pop());
+// console.log(list);
+console.log(list.get(1));
