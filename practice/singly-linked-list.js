@@ -96,6 +96,17 @@ class SinglyLinkedList {
     this.length++;
     return true;
   }
+
+  //SLL - set
+  //Function should accept and index and a value and update the value of that node in the SLL at the index with the new value. It should return true if the node is updated successfully, or false if an invalid index is passed in.
+  set(index, value){
+    let found = this.get(index);
+    if(found){
+      found.val = value;
+      return true;
+    }
+    return false;
+  }
 }
 
 let list = new SinglyLinkedList();
@@ -106,7 +117,6 @@ console.log(list.push(20));
 // console.log(list.pop());
 // console.log(list);
 // console.log(list.get(1));
-console.log(list.insert(6, 1));
-// console.log(list);
-// console.log(list.insert(3, 2));
-// console.log(list.head.next.next.next);
+console.log(list.insert(0, 1));
+console.log(list.set(1, 2));
+console.log(list);
